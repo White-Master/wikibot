@@ -21,6 +21,7 @@ class IRCBot {
 
         function __construct($config){
                 $this->socket = fsockopen($config['server'], $config['port']);
+                if(!$this->socket){ die("No se pudo conectar al servidor"); }
                 $this->login($config);
                 $this->main($config);
         }
