@@ -47,7 +47,7 @@ class IRCBot {
 				switch($com){
 					case "001":
 						$this->send_data('PRIVMSG NickServ :IDENTIFY '.$config['nsuser'].' '.$config['nspass']);
-						$this->join_channel($config['channel']);
+						$this->send_data('JOIN', $config['channel']);
 						break;
 					case "376":	$this->kk=1;
 				}
@@ -90,10 +90,6 @@ class IRCBot {
         function send_data($cmd, $msg = ""){
 			fputs($this->socket, $cmd.' '.$msg."\r\n");
         }
-
-        function join_channel($channel){
-			$this->send_data('JOIN', $channel);
-        }     
 }
 
 $bot = new IRCBot($config);
