@@ -55,8 +55,8 @@ class IRCBot {
 				if($this->kk==1){
 					$fl=file_get_contents("$config[wiki]api.php?action=query&list=recentchanges&format=json&rcprop=user|comment|flags|title|timestamp|loginfo");
 					$fg=json_decode($fl);
-					$tsfile = fopen (dirname(__FILE__). "/le.txt", "r");
-					$tscfile= fread($tsfile, 21);
+					@$tsfile = fopen (dirname(__FILE__). "/le.txt", "r");
+					@$tscfile= fread($tsfile, 21);
 					$s="";
 					if(trim($tscfile)!=trim($fg->query->recentchanges[0]->timestamp)){
 						
