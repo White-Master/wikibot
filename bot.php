@@ -49,14 +49,12 @@ class IRCBot {
 						$this->send_data('PRIVMSG NickServ :IDENTIFY '.$config['nsuser'].' '.$config['nspass']);
 						$this->join_channel($config['channel']);
 						break;
-					case "376":			$this->kk=1;
-
+					case "376":	$this->kk=1;
 				}
 				
 				if($this->kk==1){
 					$fl=file_get_contents("$config[wiki]api.php?action=query&list=recentchanges&format=json&rcprop=user|comment|flags|title|timestamp|loginfo");
 					$fg=json_decode($fl);
-					//print_r($fg);
 					$tsfile = fopen (dirname(__FILE__). "/le.txt", "r");
 					$tscfile= fread($tsfile, 21);
 					$s="";
@@ -89,18 +87,14 @@ class IRCBot {
                 $this->main($config);
         }
 
-
         function send_data($cmd, $msg = ""){
 			fputs($this->socket, $cmd.' '.$msg."\r\n");
         }
-
-
 
         function join_channel($channel){
 			$this->send_data('JOIN', $channel);
         }     
 }
 
-//Start the bot
 $bot = new IRCBot($config);
 ?>
