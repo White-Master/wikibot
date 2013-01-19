@@ -10,7 +10,7 @@ $config = array(
         'nick'   	=> 'WikiBot',  // Nick del bot
         'pass'  	=> '', // Contraseña del servidor
 		'nsuser'	=> 'WhiteBot', // Usuario de nickserv del bot (usualmente es el mismo nick)
-		'nspass'	=> 'masbot', // Contrasña de nickserv
+		'nspass'	=> 'pass', // Contrasña de nickserv
 		'wiki'		=> 'http://ocioxtreme.skn1.com/wiki/', // Wiki
 );
                                  
