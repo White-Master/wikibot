@@ -9,9 +9,9 @@ $config = array(
         'name'   	=> 'Wiki bot',  // GECOS del bot 
         'nick'   	=> 'WikiBot',  // Nick del bot
         'pass'  	=> '', // Contraseña del servidor
-		'nsuser'	=> 'WhiteBot', // Usuario de nickserv del bot (usualmente es el mismo nick)
+		'nsuser'	=> 'nick', // Usuario de nickserv del bot (usualmente es el mismo nick)
 		'nspass'	=> 'pass', // Contrasña de nickserv
-		'wiki'		=> 'http://ocioxtreme.skn1.com/wiki/', // Wiki
+		'wiki'		=> 'http://es.wikivoyage.org', // Wiki
 );
                                  
 class IRCBot {
